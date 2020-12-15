@@ -5,7 +5,7 @@ List of the topics you'd like to know more about:
 - Why Julia?
 - What is Julia?
 - Julia basics
-- How to use Python in Julia?
+- How to use Python in Julia? Julia in Python?
 - Parallelization in Julia
 - ...
 
