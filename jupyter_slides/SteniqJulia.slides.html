@@ -14700,7 +14700,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.035121 seconds (75.43 k allocations: 3.938 MiB)
+<pre>  0.040411 seconds (75.43 k allocations: 3.938 MiB)
 </pre>
 </div>
 </div>
@@ -14714,7 +14714,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.5212377614031577</pre>
+<pre>0.5033922297144101</pre>
 </div>
 
 </div>
@@ -14749,7 +14749,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.000003 seconds (1 allocation: 16 bytes)
+<pre>  0.000004 seconds (1 allocation: 16 bytes)
 </pre>
 </div>
 </div>
@@ -14763,7 +14763,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.5212377614031577</pre>
+<pre>0.5033922297144101</pre>
 </div>
 
 </div>
@@ -14799,7 +14799,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.000003 seconds (1 allocation: 16 bytes)
+<pre>  0.000004 seconds (1 allocation: 16 bytes)
 </pre>
 </div>
 </div>
@@ -14813,7 +14813,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.5024517428531541</pre>
+<pre>0.49169801972309757</pre>
 </div>
 
 </div>
@@ -14828,12 +14828,19 @@ div.jp-OutputPrompt {
 <p><strong>Optional</strong> typing</p>
 <div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">Vector</span><span class="p">)</span><span class="o">::</span><span class="kt">Number</span> <span class="o">=</span> <span class="o">...</span>
 </pre></div>
+<ul>
+<li>readability</li>
+<li>debugging</li>
+</ul>
 
 </div>
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://www.youtube.com/watch?v=kc9HwsxE1OY">Multiple dispatch</a></p>
+<p>Multiple dispatch</p>
+<p><a href="https://www.youtube.com/watch?v=kc9HwsxE1OY">Watch S. Karpinski's talk</a></p>
+<blockquote><p>The Unreasonable Effectiveness of Multiple Dispatch</p>
+</blockquote>
 
 </div>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15307,6 +15314,100 @@ But then when you do it, you wonder how you lived without it.</p>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In place transformations are explicit (<code>!</code>)</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">fill!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>5-element Array{Float64,1}:
+ 4.0
+ 4.0
+ 4.0
+ 4.0
+ 4.0</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sort!</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>5-element Array{Float64,1}:
+ 0.23067559345531286
+ 0.39713913005612667
+ 0.48373748723176124
+ 0.8559065298979898
+ 0.9835702467801051</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -15316,7 +15417,7 @@ But then when you do it, you wonder how you lived without it.</p>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
@@ -15342,7 +15443,7 @@ But then when you do it, you wonder how you lived without it.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -15363,7 +15464,7 @@ But then when you do it, you wonder how you lived without it.</p>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">aⱼ</span><span class="p">)</span> <span class="kp">in</span> <span class="n">enumerate</span><span class="p">(</span><span class="n">eachcol</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
@@ -15385,7 +15486,7 @@ But then when you do it, you wonder how you lived without it.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -15412,7 +15513,7 @@ But then when you do it, you wonder how you lived without it.</p>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">🤓</span> <span class="o">=</span> <span class="s">&quot;nerd&quot;</span>
@@ -15432,7 +15533,7 @@ But then when you do it, you wonder how you lived without it.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -15461,7 +15562,7 @@ But then when you do it, you wonder how you lived without it.</p>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">MATLAB</span><span class="p">,</span> <span class="n">PyCall</span><span class="p">,</span> <span class="n">RCall</span>
@@ -15506,7 +15607,7 @@ But then when you do it, you wonder how you lived without it.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -15534,7 +15635,7 @@ NULL
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">PyCall</span>
@@ -15560,15 +15661,14 @@ NULL
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2-element Array{Int64,1}:
- 3
- 2</pre>
+<pre>1-element Array{Int64,1}:
+ 1</pre>
 </div>
 
 </div>
@@ -15580,14 +15680,14 @@ NULL
 </div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ScikitLearn-in-Julia">ScikitLearn in Julia<a class="anchor-link" href="#ScikitLearn-in-Julia">&#182;</a></h2><p><a href="https://github.com/cstjean/ScikitLearn.jl">ScikitLearn.jl</a> is a king of "wrapper" for Python's <code>sklearn</code> package.</p>
+<h2 id="ScikitLearn-in-Julia">ScikitLearn in Julia<a class="anchor-link" href="#ScikitLearn-in-Julia">&#182;</a></h2><p><a href="https://github.com/cstjean/ScikitLearn.jl">ScikitLearn.jl</a> is a kind of "wrapper" for Python's <code>sklearn</code> package. <a href="https://medium.com/analytics-vidhya/machine-learning-with-julia-scikitlearn-jl-7c8cfe6076e8">Blog post</a>.</p>
 <p>See also, <a href="https://alan-turing-institute.github.io/MLJ.jl/dev/">MLJ.jl</a> from the Alan Turing Institute.</p>
 
 </div>
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">RDatasets</span><span class="o">:</span> <span class="n">dataset</span>
@@ -15613,7 +15713,7 @@ NULL
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -15657,7 +15757,7 @@ NULL
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">ScikitLearn</span>
@@ -15682,7 +15782,7 @@ NULL
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -15705,7 +15805,7 @@ NULL
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">BenchmarkTools</span>
@@ -15728,7 +15828,7 @@ NULL
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
@@ -15738,10 +15838,10 @@ NULL
   memory estimate:  78.20 KiB
   allocs estimate:  2
   --------------
-  minimum time:     102.455 μs (0.00% GC)
-  median time:      107.617 μs (0.00% GC)
-  mean time:        132.484 μs (6.81% GC)
-  maximum time:     7.786 ms (97.35% GC)
+  minimum time:     103.216 μs (0.00% GC)
+  median time:      108.281 μs (0.00% GC)
+  mean time:        155.595 μs (8.03% GC)
+  maximum time:     11.944 ms (98.02% GC)
   --------------
   samples:          10000
   evals/sample:     1</pre>
@@ -15766,7 +15866,7 @@ NULL
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
@@ -15793,7 +15893,7 @@ NULL
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  1.269 ms (48980 allocations: 921.58 KiB)
+<pre>  1.278 ms (48980 allocations: 921.58 KiB)
 </pre>
 </div>
 </div>
@@ -15805,7 +15905,7 @@ NULL
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Threads is in standard library</span>
@@ -15825,7 +15925,7 @@ NULL
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
 
 
@@ -15843,7 +15943,7 @@ NULL
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
@@ -15872,7 +15972,7 @@ NULL
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  426.741 μs (39001 allocations: 611.88 KiB)
+<pre>  436.263 μs (39001 allocations: 611.88 KiB)
 </pre>
 </div>
 </div>
@@ -15890,7 +15990,7 @@ NULL
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># using BenchmarkTools</span>
@@ -15976,18 +16076,11 @@ Stacktrace:
 </div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Package-creating:-a-simple-example">Package creating: a simple example<a class="anchor-link" href="#Package-creating:-a-simple-example">&#182;</a></h2><p>Let's start from the basic GitHub repo <a href="https://github.com/CRIStAL-Sigma/SteniqJulia">SteniqJulia</a></p>
-<p>Now, I set up the Julia project</p>
-<div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">PkgTemplates</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(;</span> <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="o">!</span><span class="n">Readme</span><span class="p">,</span> <span class="o">!</span><span class="n">Git</span><span class="p">,</span> <span class="o">!</span><span class="n">License</span><span class="p">])</span>
-<span class="n">t</span><span class="p">(</span><span class="s">&quot;SteniqJulia&quot;</span><span class="p">)</span>
+<h2 id="Package-creation:-a-simple-example">Package creation: a simple example<a class="anchor-link" href="#Package-creation:-a-simple-example">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">PkgTemplates</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(;</span> <span class="n">user</span><span class="o">=</span><span class="s">&quot;github_user_name&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="p">(</span><span class="s">&quot;MyNewPackage&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
-</div></section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Everything-is-smooth!">Everything is smooth!<a class="anchor-link" href="#Everything-is-smooth!">&#182;</a></h2>
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16013,7 +16106,7 @@ Stacktrace:
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Some-ressources-to-get-started">Some ressources to get started<a class="anchor-link" href="#Some-ressources-to-get-started">&#182;</a></h2><ul>
-<li>All the links have already given 🙃</li>
+<li>All the links already given 🙃</li>
 <li><a href="https://docs.julialang.org/en/v1/">Official documentation</a></li>
 <li><a href="https://www.youtube.com/playlist?list=PLP8iPy9hna6SCcFv3FvY_qjAmtTsNYHQE">Youtube Julia tutorials</a></li>
 <li><a href="https://julia.quantecon.org/index_toc.html">QuantEcon's Julia page</a></li>
